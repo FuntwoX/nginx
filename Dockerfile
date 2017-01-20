@@ -29,6 +29,12 @@ VOLUME /config
 
 EXPOSE 80 443
 
+
+ENV USE_SSL=false \
+    server_name=localhost 
+
+COPY start /
+
 COPY nginx/mime.types /etc/nginx/mime.types
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 COPY nginx/php.conf /etc/nginx/php.conf
