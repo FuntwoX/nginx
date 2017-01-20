@@ -29,15 +29,12 @@ VOLUME /config
 
 EXPOSE 80 443
 
-ENV USE_SSL=false \
-    server_name=localhost 
-
-COPY common_default.conf ssl.conf /etc/nginx/
-COPY nginx.conf /etc/nginx/nginx.conf
-
-COPY start /
-
-COPY rules-htpasswd /etc/nginx/.htpasswd
+COPY nginx/mime.types /etc/nginx/mime.types
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+COPY nginx/php.conf /etc/nginx/php.conf
+COPY nginx/proxy.conf /etc/nginx/proxy.conf
+COPY nginx/services.conf /etc/nginx/services.conf
+COPY nginx/htpasswd /etc/nginx/htpasswd
 
 RUN rm -rf /var/www \
     && mkdir /var/www
