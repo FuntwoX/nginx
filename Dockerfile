@@ -41,6 +41,7 @@ COPY nginx/php.conf /etc/nginx/php.conf
 COPY nginx/proxy.conf /etc/nginx/proxy.conf
 COPY nginx/services.conf /etc/nginx/services.conf
 COPY nginx/htpasswd /etc/nginx/htpasswd
+COPY nginx/auth-basic.conf /etc/nginx/auth-basic.conf
 
 RUN rm -rf /var/www \
     && mkdir /var/www
