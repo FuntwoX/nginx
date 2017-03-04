@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER https://github.com/cloneMe, Kelvin Chen <kelvin@kelvinchen.org>
+MAINTAINER <https://github.com/FuntwoX>
 
 # Install all dependencies that are used in multiple images.
 RUN echo "deb http://httpredir.debian.org/debian jessie non-free" \
